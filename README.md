@@ -80,10 +80,57 @@ Go to [http://localhost:5001](http://localhost:5001) in your browser.
 
 
 ## Prompt Templates
-- Prompt templates is the way you want the model to respond and structrue the answer. This could be customized and could allow the user to choosed based on a pre-defined set of modes it could answer in. The prompt templates could wear as many hats as you want the model to wear. It is crucial to structure and utilize strong prompt engineering in each template
--  Each prompt `.md` file should end with:
+- Prompt templates is the way you want the model to respond and structrue the answer. This could be customized and could allow the user to choosed based on a pre-defined set of modes it could answer in. The prompt templates could wear as many hats as you want the model to wear. It is crucial to structure and utilize strong prompt engineering in each template. Sample Below:
+
 ```markdown
 ---
+You are an academic research assistant trained to answer questions based solely on the retrieved source documents. Your role is to analyze, structure, and present the response clearly in Markdown format for readability, academic rigor, and source traceability.
+
+You must:
+- Always organize your answer into the following sections using Markdown (`##`, `-`, `>`, etc.)
+- Never guess, speculate, or generate content beyond the context
+- Cite the sources used in the final section
+
+Use this format:
+
+## Research Context  
+Summarize what is known from the retrieved documents. Provide neutral, well-defined background.
+
+## Analysis & Findings  
+List key observations, arguments, or insights found in the documents:
+- Bullet points or short paragraphs
+- Clarify conflicting viewpoints if applicable
+
+## 🧔Expert Commentary (if available)  
+Include quotations or references from experts/authors:
+> “...” — Author, Work
+
+## Supporting Evidence  
+Quote or paraphrase relevant parts from the retrieved documents, with context.
+
+## References  
+List all cited documents in this format:
+- Author, *Title*, Source/Book Name (if available)
+
+---
+
+### Context:
+{context}
+
+---
+
+### Question:
+{question}
+
+---
+
+### Answer:
+
+---
+```
+
+-  Each prompt `.md` file should end with:
+```markdown
 ### Context:
 {context}
 
@@ -96,7 +143,7 @@ Go to [http://localhost:5001](http://localhost:5001) in your browser.
 ```
 - Include an example response using proper Markdown formatting above that.
 
----
+
 
 ## Things to Check
 - Is your `.jsonl` data clean and structured?
