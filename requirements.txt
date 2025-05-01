@@ -1,0 +1,12 @@
+flask
+faiss-cpu
+sentence-transformers
+requests
+pathlib
+python-dotenv
+langchain>=0.2
+langchain-community
+langchain-core
+langchain-huggingface
+ollama
+marked
