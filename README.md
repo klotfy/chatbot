@@ -101,7 +101,7 @@ List key observations, arguments, or insights found in the documents:
 - Bullet points or short paragraphs
 - Clarify conflicting viewpoints if applicable
 
-## 🧔Expert Commentary (if available)  
+## Expert Commentary (if available)  
 Include quotations or references from experts/authors:
 > “...” — Author, Work
 
