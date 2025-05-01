@@ -80,7 +80,8 @@ Go to [http://localhost:5001](http://localhost:5001) in your browser.
 
 
 ## Prompt Templates
-- Each prompt `.md` file should end with:
+- Prompt templates is the way you want the model to respond and structrue the answer. This could be customized and could allow the user to choosed based on a pre-defined set of modes it could answer in. The prompt templates could wear as many hats as you want the model to wear. It is crucial to structure and utilize strong prompt engineering in each template
+-  Each prompt `.md` file should end with:
 ```markdown
 ---
 ### Context:
