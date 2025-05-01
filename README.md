@@ -17,8 +17,8 @@ This is a Flask-based chatbot that uses local document retrieval, FAISS indexing
 
 ### 1. Clone and set up virtual environment
 ```bash
-git clone https://github.com/yourname/your-chatbot-repo.git
-cd your-chatbot-repo
+git clone https://github.com/klotfy/chatbot
+cd chatbot
 python3 -m venv venv
 source venv/bin/activate  # OR venv\Scripts\activate (Windows)
 pip install -r requirements.txt
