@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coptic Companion | Orthodox AI Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="{{ url_for('static', filename='chat.js') }}" defer></script>
+  <style>
+    .dark-mode body {
+      background-color: #121212;
+      color: #e4e4e4;
+    }
+
+    .dark-mode .chat-container {
+      background-color: #1e1e1e;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .dark-mode .bot {
+      background-color: #2a2a2a;
+      border-left: 4px solid #65b36d;
+    }
+
+    .dark-mode .user {
+      background-color: #194c66;
+    }
+
+    .dark-mode #question-input,
+    .dark-mode #mode-select {
+      background-color: #2c2c2c;
+      color: #eee;
+      border: 1px solid #444;
+    }
+
+    .dark-mode #send-button {
+      background-color: #65b36d;
+    }
+
+    .dark-mode .message,
+    .dark-mode .bot,
+    .dark-mode .user {
+      color: #e4e4e4;
+    }
+
+    #theme-toggle {
+      margin-bottom: 10px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <h1>Coptic Companion | Orthodoxia</h1>
+    <p class="description">Ask questions about the Coptic Orthodox faith and receive answers based on Church teachings.</p>
+
+    <button id="theme-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+      <label for="mode-select">Choose answer style:</label>
+      <select id="mode-select">
+        <option value="traditional">Traditional</option>
+        <option value="formal">Formal</option>
+        <option value="simple">Simple</option>
+        <option value="academic">Academic</option>
+        <option value="catechism">Catechism</option>
+      </select>
+
+      <div class="input-row">
+        <input type="text" id="question-input" placeholder="Ask a question about the Coptic Orthodox faith..." />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const button = document.getElementById('theme-toggle');
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        button.textContent = '☀️ Toggle Light Mode';
+      } else {
+        button.textContent = '🌙 Toggle Dark Mode';
+      }
+    }
+  </script>
+</body>
+</html>
